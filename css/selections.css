@@ -1,0 +1,169 @@
+.multiselect {
+    width: 200px;
+  }
+  
+  .selectBox {
+    position: relative;
+    height: 30px;
+  }
+  
+  .selectBox select {
+    width: 100%;
+    font-weight: bold;
+    
+  }
+  
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  .form-control{
+    background: #ddd;
+    z-index: 9999;
+    position:absolute;
+  }
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+  #checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+    margin-top: -17px;
+    cursor: auto;
+    text-align: left;
+   
+  }
+  
+  #checkboxes label {
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 10px;
+    
+    
+   
+  }
+  
+  #checkboxes label:hover {
+    background-color: #1e90ff;
+  
+  }
+
+  #level1 label:hover{
+    background: none;
+    cursor: auto;
+
+  }
+
+  #level2 label:hover{
+    background: none;
+    cursor: auto;
+
+  }
+
+#optionOne{
+  margin-top: 30px;
+}
+
+#indexButton{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  margin-left: 10px;
+
+}
+#indexButton:hover{
+  background: #1e90ff;
+  cursor:pointer;
+}
+.inner-label{
+  display:inline;
+  font-size:12px;
+}
+
+.inner-input{
+  display:inline;
+  width:30px;
+  height:20px;
+}
+ #editor-container{
+  width: 150px;
+  height: 80px;
+ }
+
+#content-container {
+  margin-left: 10px;
+  width: 200px;
+}
+
+
+
+.section1,
+.section2 {
+  float: left;
+}
+
+.section1 {
+  width: 80%;
+  max-width: 600px;
+}
+
+.section2 {
+  width: 20%;
+  max-width: 158px;
+  overflow-wrap: break-word;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ql-toolbar,
+.ql-editor,
+.ql-blank {
+  background: #fff;
+  color: #000;
+}
+
+#quill-editor {
+  height: 45px;
+  box-shadow: 6px 6px 6px 0 rgba(0, 0, 0, 0.75);
+}
+
+.ql-showHtml {
+  margin-right: 8px;
+}
+
+.ql-showHtml:after {
+  content: "<html>";
+}
+
+.ql-picker.ql-emailVars {
+  width: 60px;
+}
+
+/* .ql-picker.ql-emailVars .ql-picker-item::before, 
+.ql-picker.ql-emailVars .ql-picker-label::before {
+  content: 'Custom'
+}
+
+.ql-picker.ql-emailVars [data-value="1"]::before {
+  content: '{AccountURL}'
+}
+
+.ql-picker.ql-emailVars [data-value="2"]::before {
+  content: '{FirstName}'
+}
+
+.ql-picker.ql-emailVars [data-value="3"]::before {
+  content: '{Login}'
+}
+
+.ql-picker.ql-emailVars [data-value="4"]::before {
+  content: '{OrganizationName}'
+}
+
+.ql-picker.ql-emailVars [data-value="5"]::before {
+  content: '{SupportEmail}'
+} */

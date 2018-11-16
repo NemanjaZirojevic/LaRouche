@@ -1,0 +1,7 @@
+status	deny
+
+any:fileout1 job
+
+reply:dataoef
+deny: dataoef_
+

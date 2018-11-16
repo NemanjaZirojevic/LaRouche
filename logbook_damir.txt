@@ -1,0 +1,61 @@
+Installation de WIMS
+====================
+
+- installation des packages macports sur le mac
+   * le package "atlas" met un temps fou à compiler (plusieurs heures)
+   * il ne réussit pas à la fin. C'est dû au fait qu'il cherche gfortran de la version gcc6 (/opt/local/lib/libgcc/libgfortran.3.dylib) alors que c'est la version 7 qui est installée (libgfortran.4.dylib). Un
+            sudo port -v install gcc6
+   précédé et suivi par
+            sudo port -v install atlas +clang
+   a réglé le problème
+
+Editeur Quill
+==============
+
+- variables : doit étendre le blot "Embed" (je crois) pour fabriquer une vue de variable non éditable
+
+- pb de curseur qui fait n'importe quoi, ne se met pas au bon endroit, ne détruit pas un embed lorsqu'il est non éditable, etc... : https://github.com/quilljs/quill/issues/1172
+
+- quill.min.js.map : source map, permet d'afficher les lignes de code de quill dans le débogueur même lorsque le source a été minifié.
+
+*** code-blocks ****
+--------------------
+  - peut configurer la bibliothèque highlight pour OEF -> demander à Bernadette ?
+   avant de construire les éditeurs Quill avec
+  hljs.configure({   // optionally configure hljs
+    languages: ['TeX','HTML']
+  });
+
+  - code-blocks : les fichiers css de highlight.js ne sont pas pris en compte tels quels, il faut regarder le fichier css quill.snow.css, classes pre.ql-syntax (si utilise la coloration de syntaxe), changer les couleurs par défaut.
+  Egalement changer :
+  .ql-snow .ql-editor code,
+  .ql-snow .ql-editor pre {
+  background-color: #efefbf;
+  color: #686a72;
+  border-radius: 3px;
+  }
+  --> fichier quill.snow-custom.css
+
+  TypeScript
+  ==========
+
+  * Doit ajouter fichier "tsconfig.json" (configuration de TypeScript)
+  * Doit ajouter fichier "reference.ts" (modules/frameworks/etc... liés au projet)
+    -> comment traiter les bibliothèques et dépendances
+    -> ici JQuery et foundation
+    * Doit charger les fichiers de description des dépendances TypeScript :
+      -> se placer dans le dossier projet
+      -> npm install --save-dev @types/xxxx
+      avec xxxx = jquery ou foundation ou...
+        -> installe des fichiers index.d.ts dans le dossier nodes_modules
+      voir definitelytyped.org pour les fichiers de description
+
+
+Blockly
+=======
+
+Integration dans WIMS
+=====================
+- les css de fondation ne sont pas là par défaut dans le svn de wims -> les mettre dans themes/_css
+- j'ai mis là dedans foundation.min.css pour ne pas me casser la tête
+- idem pour les icônes foundation-icons, j'ai mis tout le dossier dans themes/_css
